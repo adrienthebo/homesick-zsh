@@ -69,6 +69,3 @@ bindkey -M vicmd v edit-command-line
 
 autoload -Uz compinit && compinit
 autoload -U zed
-
-# added by travis gem
-[ -f /home/adrien/.travis/travis.sh ] && source /home/adrien/.travis/travis.sh
