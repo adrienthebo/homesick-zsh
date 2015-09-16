@@ -7,12 +7,8 @@
 # Source all zsh fragments
 ################################################################################
 
-zshrc_d="$HOME/.zshrc.d"
-if [ -e "$zshrc_d" ]; then
-  find -L $zshrc_d -type f -name "*.zsh" | while read subconf; do
-    source $subconf
-  done
-fi
+sourcedir "${HOME}/.zshrc.d"
+sourcedir "${HOME}/.zshrc.local.d"
 
 ################################################################################
 # zsh general options
