@@ -1,9 +1,6 @@
 # .zshenv
 
 typeset -U path
-################################################################################
-# Functions we want everywhere.
-################################################################################
 
 function pathmunge () {
 
@@ -46,32 +43,10 @@ function sourcedir() {
     fi
 }
 
-################################################################################
-# Path munging
-#
-# Path munging needs to occur here in case we do things in a non-interactive
-# shell, EG ssh foo@bar "frobnicate yerface", where frobnicate is in
-# $HOME/local/bin
-################################################################################
-
-case `uname` in
-    Linux)
-        pathmunge /sbin after
-        pathmunge /usr/sbin after
-        pathmunge /usr/local/bin after
-        pathmunge /usr/local/sbin after
-    ;;
-    SunOS)
-        pathmunge /sbin after
-        pathmunge /usr/sbin after
-        pathmunge /usr/local/bin after
-        pathmunge /usr/sfw/bin after
-        pathmunge /opt/csw/bin after
-        pathmunge /usr/openwin/bin after
-        pathmunge /usr/X11/bin after
-    ;;
-    *)
-    ;;
-esac
-
-pathmunge $HOME/local/bin
+# We can't consistently set paths here; in certain scenarios (like running zsh inside of tmux)
+# /etc/profile is sources after this file and may wipe out $PATH. For top level shells and
+# non-interactive shells we need to source paths; for interactive shells that are nested we
+# rely on .zprofile to pull in path information.
+if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
+    source ~/.zpath
+fi

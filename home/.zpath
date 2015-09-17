@@ -1,0 +1,27 @@
+# .zpath
+#
+# Path settings that should always be present. This should be sourced by .zshenv for non-interactive shells
+# (such as zsh run via ssh) and through normal (and possibly nested login shells).
+#
+# This should always be sourced after .zshenv so that the pathmunge function has been defined.
+
+pathmunge $HOME/local/bin
+
+pathmunge /usr/local/bin after
+
+pathmunge /sbin after
+pathmunge /usr/sbin after
+
+case `uname` in
+  Linux)
+    pathmunge /usr/local/sbin after
+    ;;
+  SunOS)
+    pathmunge /usr/sfw/bin after
+    pathmunge /opt/csw/bin after
+    pathmunge /usr/openwin/bin after
+    pathmunge /usr/X11/bin after
+    ;;
+  *)
+    ;;
+esac
