@@ -1,4 +1,4 @@
-plugins=(docker lein)
+plugins=(docker lein httpie)
 
 # {{{ Required variables for oh-my-zsh
 ZSH=~/.oh-my-zsh
