@@ -36,7 +36,7 @@ function manpathmunge () {
 
 function sourcedir() {
   local sourcepath=$1
-    if [[ -d $sourcepath || -l $sourcepath ]]; then
+    if [[ -d $sourcepath || -h $sourcepath ]]; then
         find -L $sourcepath -type f -name "*.zsh" | while read subconf; do
             source $subconf
         done
