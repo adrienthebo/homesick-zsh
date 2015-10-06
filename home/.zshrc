@@ -21,6 +21,8 @@ setopt NO_BEEP
 # If given a directory, cd into it
 setopt AUTO_CD
 
+setopt NO_CDABLE_VARS
+
 # Update title
 chpwd() {
   [[ -t 1 ]] || return
