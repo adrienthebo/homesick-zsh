@@ -10,3 +10,10 @@ alias bu="bundle update"
 alias be="bundle exec"
 alias br="bundle exec rspec"
 alias bs="bundle exec rspec"
+
+
+if [ -d "$HOME/.rbenv/bin" ]; then
+  eval "$($HOME/.rbenv/bin/rbenv init -)"
+elif which rbenv 1>&- 2>&-; then
+  eval "$(rbenv init -)"
+fi
