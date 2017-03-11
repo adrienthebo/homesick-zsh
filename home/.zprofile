@@ -2,6 +2,8 @@
 #
 # Things happen here, yo.
 
-[ -f ~/.profile ] source ~/.zprofile
+if [[ -f ~/.profile ]]; then
+    source ~/.profile
+fi
 
 source ~/.zpath
