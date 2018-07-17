@@ -17,3 +17,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 elif which rbenv 1>&- 2>&-; then
   eval "$(rbenv init -)"
 fi
+
+for bindir in $HOME/.gem/ruby/*/bin ; do
+  pathmunge "$bindir" after
+done
