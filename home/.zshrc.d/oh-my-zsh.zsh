@@ -1,4 +1,4 @@
-plugins=(docker cargo rust httpie)
+plugins=(docker cargo rust httpie terraform)
 
 # {{{ Required variables for oh-my-zsh
 ZSH=~/.oh-my-zsh
