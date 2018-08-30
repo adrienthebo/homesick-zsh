@@ -9,9 +9,6 @@ case `uname` in
     ;;
 esac
 
-# Random stupid aliases that I find amusing
-
-alias lsd="echo OH GOD I CAN SEE FOREVER"
 alias y="echo n"
 
 alias qotd="nc alpha.mike-r.com 17"
