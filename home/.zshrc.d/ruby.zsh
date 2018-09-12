@@ -26,3 +26,7 @@ fi
     pathmunge "$bindir" after
   fi
 }
+
+if [[ $(uname) == "Darwin" ]]; then
+  export SSL_CERT_FILE=/private/etc/ssl/cert.pem
+fi
