@@ -18,6 +18,11 @@ elif which rbenv 1>&- 2>&-; then
   eval "$(rbenv init -)"
 fi
 
-for bindir in $HOME/.gem/ruby/*/bin ; do
-  pathmunge "$bindir" after
-done
+{
+  if which ruby 2>&- 1>&-; then
+    local ruby_version bindir
+    ruby_version="$(ruby -rrbconfig -e 'puts RbConfig::CONFIG["ruby_version"]')"
+    bindir="$HOME/.gem/ruby/${ruby_version}/bin"
+    pathmunge "$bindir" after
+  fi
+}
