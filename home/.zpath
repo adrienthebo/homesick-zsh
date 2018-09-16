@@ -22,6 +22,4 @@ case `uname` in
     pathmunge /usr/openwin/bin after
     pathmunge /usr/X11/bin after
     ;;
-  *)
-    ;;
 esac
