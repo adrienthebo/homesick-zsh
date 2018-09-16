@@ -5,8 +5,6 @@
 #
 # This should always be sourced after .zshenv so that the pathmunge function has been defined.
 
-pathmunge $HOME/local/bin
-
 pathmunge /usr/local/bin after
 
 pathmunge /sbin after
