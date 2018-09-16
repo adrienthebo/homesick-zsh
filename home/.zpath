@@ -16,10 +16,4 @@ case `uname` in
   Linux)
     pathmunge /usr/local/sbin after
     ;;
-  SunOS)
-    pathmunge /usr/sfw/bin after
-    pathmunge /opt/csw/bin after
-    pathmunge /usr/openwin/bin after
-    pathmunge /usr/X11/bin after
-    ;;
 esac
