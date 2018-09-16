@@ -5,13 +5,17 @@
 #
 # This should always be sourced after .zshenv so that the pathmunge function has been defined.
 
-pathmunge /usr/local/bin after
 
-pathmunge /sbin after
-pathmunge /usr/sbin after
 
 case `uname` in
+  Darwin)
+    # Put /usr/local/bin in path first on Mac to ensure we use homebrew
+    pathmunge /usr/local/bin
+    ;;
   Linux)
+    pathmunge /usr/local/bin after
+    pathmunge /sbin after
+    pathmunge /usr/sbin after
     pathmunge /usr/local/sbin after
     ;;
 esac
