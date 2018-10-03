@@ -1,4 +1,4 @@
-plugins=(docker cargo rust httpie terraform)
+plugins=(docker cargo rust httpie terraform tmux zsh-syntax-highlighting kitchen)
 
 # {{{ Required variables for oh-my-zsh
 ZSH=~/.oh-my-zsh
