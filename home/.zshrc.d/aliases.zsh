@@ -13,3 +13,5 @@ alias y="echo n"
 
 alias qotd="nc alpha.mike-r.com 17"
 alias starwars="nc towel.blinkenlights.nl 23"
+
+alias terrorfarm="terraform"
