@@ -16,3 +16,7 @@ alias starwars="nc towel.blinkenlights.nl 23"
 
 alias terrorfarm="terraform"
 alias tf="terraform"
+
+if command -v rg 1>&-; then
+  alias ag="rg"
+fi
