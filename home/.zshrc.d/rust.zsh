@@ -1,5 +1,5 @@
 pathmunge "${HOME}/.cargo/bin" after
 
-if which sccache 2>/dev/null 1>/dev/null; then
+if command -v sccache 2>&- 1>&-; then
   export RUSTC_WRAPPER="sccache"
 fi
