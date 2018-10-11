@@ -1,9 +1,12 @@
 plugins=(docker cargo rust httpie terraform tmux zsh-syntax-highlighting kitchen)
 
-# {{{ Required variables for oh-my-zsh
-ZSH=~/.oh-my-zsh
-ZSH_THEME=fox
-# }}}
+ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+#zsh_theme="fox"
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
 
 if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
   source ~/.oh-my-zsh/oh-my-zsh.sh
