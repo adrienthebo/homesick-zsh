@@ -5,7 +5,7 @@
 #
 # This should always be sourced after .zshenv so that the pathmunge function has been defined.
 
-
+pathmunge "${HOME}/.local/bin" after
 
 case `uname` in
   Darwin)
