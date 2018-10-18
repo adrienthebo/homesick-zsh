@@ -17,6 +17,25 @@ alias starwars="nc towel.blinkenlights.nl 23"
 alias terrorfarm="terraform"
 alias tf="terraform"
 
-if command -v rg 1>&-; then
-  alias ag="rg"
-fi
+function ag() {
+    discipline "rg" 2 $@
+}
+
+function vim() {
+    discipline "nvim" 1 $@
+}
+
+function discipline() {
+    local REPLACE DURATION
+    REPLACE=$1
+    shift
+    DURATION=$1
+    shift
+    ARGS=$@
+
+    echo "$fg_bold[red]Use ${REPLACE}.$fg[none]"
+    sleep $DURATION
+    command $REPLACE $@
+    echo "$fg_bold[red]No, really, use ${REPLACE}.$fg[none]"
+    sleep $DURATION
+}
