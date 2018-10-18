@@ -1,4 +1,4 @@
-plugins=(docker cargo rust httpie terraform tmux zsh-syntax-highlighting kitchen)
+plugins=(docker cargo rust httpie terraform tmux zsh-syntax-highlighting kitchen pip)
 
 ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
