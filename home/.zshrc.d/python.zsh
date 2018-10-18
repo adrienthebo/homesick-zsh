@@ -5,3 +5,7 @@ if [ -d "$HOME/.pyenv/bin" ]; then
 elif which pyenv 1>&- 2>&-; then
   eval "$(pyenv init -)"
 fi
+
+if [[ -d "/Users/thebo/Library/Python/3.7/bin" ]]; then
+  pathmunge "/Users/thebo/Library/Python/3.7/bin"
+fi
