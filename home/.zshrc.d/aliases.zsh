@@ -22,7 +22,11 @@ function ag() {
 }
 
 function vim() {
-    discipline "nvim" 1 $@
+    if command -v nvim 2>&- 1>&-; then
+        discipline "nvim" 1 $@
+    else
+        command vim $@
+    fi
 }
 
 function discipline() {
