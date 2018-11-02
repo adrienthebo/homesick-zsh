@@ -1,4 +1,16 @@
-plugins=(docker cargo rust httpie terraform tmux zsh-syntax-highlighting kitchen pip)
+plugins=(
+  docker
+  cargo
+  rust
+  httpie
+  terraform
+  tmux
+  zsh-syntax-highlighting
+  kitchen
+  pip
+  history
+  fzf
+)
 
 ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
