@@ -1,17 +1,6 @@
-################################################################################
-# zsh history options
-################################################################################
+# Most of the history configuration is offloaded to oh-my-zh
+#
+# See also: https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/history.zsh
 
-HIST_STAMPS="yyyy-mm-dd"
-
-# Configure history
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_all_dups
-# Ignore commands with a leading space
-setopt hist_ignore_space
-# New history lines are added to the $HISTFILE incrementally
-# (as soon as they are entered)
-setopt incappendhistory
-
+HIST_STAMPS="yyyy-mm-dd"
