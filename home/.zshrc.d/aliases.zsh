@@ -19,6 +19,10 @@ alias terrorfarm="terraform"
 alias tf="terraform"
 alias t="task"
 
+if command -v colordiff 2>&- 1>&-; then
+  alias diff="colordiff"
+fi
+
 function ag() {
     discipline "rg" 2 $@
 }
