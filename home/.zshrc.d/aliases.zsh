@@ -17,6 +17,7 @@ alias tree="tree -C"
 
 alias terrorfarm="terraform"
 alias tf="terraform"
+alias t="task"
 
 function ag() {
     discipline "rg" 2 $@
