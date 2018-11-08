@@ -1,4 +1,3 @@
-
 if [[ $(uname) = 'Darwin' ]]; then
   function docker() {
     command docker info 2>&- 1>&-
