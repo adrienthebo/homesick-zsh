@@ -39,20 +39,3 @@ chpwd() {
 #      ;;
   esac
 }
-
-################################################################################
-# crazy zle options
-################################################################################
-
-# Use vi keybindings, but leave in some normal readline magic.
-bindkey -v
-bindkey -v '^k' kill-whole-line
-bindkey -v '^r' history-incremental-search-backward
-
-# Now this is just straight up black magic
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-
-autoload -Uz compinit && compinit
-autoload -U zed
