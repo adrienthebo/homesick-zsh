@@ -29,23 +29,8 @@ function ag() {
 
 function vim() {
     if command -v nvim 2>&- 1>&-; then
-        discipline "nvim" 1 $@
+        command nvim $@
     else
         command vim $@
     fi
-}
-
-function discipline() {
-    local REPLACE DURATION
-    REPLACE=$1
-    shift
-    DURATION=$1
-    shift
-    ARGS=$@
-
-    echo "$fg_bold[red]Use ${REPLACE}.$fg[none]"
-    sleep $DURATION
-    command $REPLACE $@
-    echo "$fg_bold[red]No, really, use ${REPLACE}.$fg[none]"
-    sleep $DURATION
 }
