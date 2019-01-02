@@ -1,14 +1,3 @@
-case `uname` in
-  Linux)
-    alias ls="ls -F --color=auto"
-    alias l="ls -F --color=auto"
-    ;;
-  *)
-    alias ls="ls -F"
-    alias l="ls -F"
-    ;;
-esac
-
 alias y="echo n"
 
 alias qotd="nc alpha.mike-r.com 17"
@@ -23,14 +12,21 @@ if command -v colordiff 2>&- 1>&-; then
   alias diff="colordiff"
 fi
 
-function ag() {
-    discipline "rg" 2 $@
-}
+if command -v nvim 2>&- 1>&-; then
+  alias vim=nvim
+fi
 
-function vim() {
-    if command -v nvim 2>&- 1>&-; then
-        command nvim $@
-    else
-        command vim $@
-    fi
-}
+if command -v lsd 2>&- 1>&-; then
+  alias ls=lsd
+else
+  case `uname` in
+    Linux)
+      alias ls="ls -F --color=auto"
+      alias l="ls -F --color=auto"
+      ;;
+    *)
+      alias ls="ls -F"
+      alias l="ls -F"
+      ;;
+  esac
+fi
