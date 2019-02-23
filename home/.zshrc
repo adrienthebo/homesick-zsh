@@ -10,6 +10,9 @@
 sourcedir "${HOME}/.zshrc.d"
 sourcedir "${HOME}/.zshrc.local.d"
 
+sourcedir "${HOME}/.zshrc.d/after"
+sourcedir "${HOME}/.zshrc.local.d/after"
+
 ################################################################################
 # zsh general options
 ################################################################################
