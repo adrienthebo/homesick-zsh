@@ -18,15 +18,4 @@ fi
 
 if command -v lsd 2>&- 1>&-; then
   alias ls=lsd
-else
-  case `uname` in
-    Linux)
-      alias ls="ls -F --color=auto"
-      alias l="ls -F --color=auto"
-      ;;
-    *)
-      alias ls="ls -F"
-      alias l="ls -F"
-      ;;
-  esac
 fi
