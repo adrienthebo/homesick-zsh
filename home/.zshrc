@@ -6,6 +6,9 @@
 ################################################################################
 # Source all zsh fragments
 ################################################################################
+#
+sourcedir "${HOME}/.zshrc.d/before"
+sourcedir "${HOME}/.zshrc.local.d/before"
 
 sourcedir "${HOME}/.zshrc.d"
 sourcedir "${HOME}/.zshrc.local.d"
