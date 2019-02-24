@@ -29,19 +29,4 @@ setopt AUTO_CD
 
 setopt NO_CDABLE_VARS
 
-# Update title
-chpwd() {
-  [[ -t 1 ]] || return
-  case $TERM in
-    (sun-cmd)
-      print -Pn "\e]l%~\e\\"
-      ;;
-    (*xterm*|rxvt|(dt|k|E)term)
-      print -Pn "\e]2;%~\a"
-      ;;
-# This updates the wrong field in tmux
-#    screen)
-#      print -Pn "\033k%~\033\\"
-#      ;;
-  esac
-}
+echo "Peace comes from within."
