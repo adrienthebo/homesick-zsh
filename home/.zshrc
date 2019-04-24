@@ -28,5 +28,3 @@ setopt NO_BEEP
 setopt AUTO_CD
 
 setopt NO_CDABLE_VARS
-
-echo "Peace comes from within."
