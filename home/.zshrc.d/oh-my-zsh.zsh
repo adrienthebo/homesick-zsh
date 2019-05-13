@@ -11,6 +11,7 @@ plugins=(
   history fzf
   rustup
   zsh-completions
+  kubectl
 )
 
 autoload -U compinit && compinit
