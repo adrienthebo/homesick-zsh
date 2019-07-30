@@ -19,3 +19,7 @@ fi
 if command -v lsd 2>&- 1>&-; then
   alias ls=lsd
 fi
+
+if command -v bat 2>&- 1>&-; then
+  alias cat=bat
+fi
