@@ -4,9 +4,36 @@
 [ -f ~/.profile ] && source ~/.profile
 
 ################################################################################
+# Zplugin initialization
+################################################################################
+
+source "$HOME/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+
+################################################################################
+# Zplugin plugin loading
+################################################################################
+
+zplugin ice atclone'./install --xdg --no-update-rc --completion --key-bindings' atpull'%atclone'; zplugin load junegunn/fzf
+
+# REVIEW: randomly added plugin, figure out what it does
+zplugin light zsh-users/zsh-autosuggestions
+# REVIEW: randomly added plugin, figure out what it does
+zplugin light zdharma/fast-syntax-highlighting
+
+# Plugin history-search-multi-word loaded with tracking.
+# REVIEW: randomly added plugin, figure out what it does
+zplugin load zdharma/history-search-multi-word
+
+# Relic build systems from a bygone era...
+zplugin ice as"program" atclone"./autogen.sh && ./configure" atpull="%atclone" make pick"NOPE"; zplugin load universal-ctags/ctags
+
+#export FZF_BASE="$HOME/.zplugin/plugins/junegunn---fzf-bin"
+################################################################################
 # Source all zsh fragments
 ################################################################################
-#
+
 sourcedir "${HOME}/.zshrc.d/before"
 sourcedir "${HOME}/.zshrc.local.d/before"
 
@@ -28,3 +55,5 @@ setopt NO_BEEP
 setopt AUTO_CD
 
 setopt NO_CDABLE_VARS
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh

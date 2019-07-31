@@ -8,7 +8,7 @@ plugins=(
   zsh-syntax-highlighting
   kitchen
   pip
-  history fzf
+  history
   rustup
   zsh-completions
   kubectl
