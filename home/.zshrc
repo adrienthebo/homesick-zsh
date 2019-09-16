@@ -10,27 +10,28 @@
 # Zplugin installation:
 # `sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"`
 
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+if [ -f "$HOME/.zplugin/bin/zplugin.zsh" ]; then
+  source "$HOME/.zplugin/bin/zplugin.zsh"
+  autoload -Uz _zplugin
+  (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-################################################################################
-# Zplugin plugin loading
-################################################################################
+  zplugin ice atclone'./install --xdg --no-update-rc --completion --key-bindings' atpull'%atclone'; zplugin load junegunn/fzf
 
-zplugin ice atclone'./install --xdg --no-update-rc --completion --key-bindings' atpull'%atclone'; zplugin load junegunn/fzf
+  # REVIEW: randomly added plugin, figure out what it does
+  zplugin light zsh-users/zsh-autosuggestions
+  # REVIEW: randomly added plugin, figure out what it does
+  zplugin light zdharma/fast-syntax-highlighting
 
-# REVIEW: randomly added plugin, figure out what it does
-zplugin light zsh-users/zsh-autosuggestions
-# REVIEW: randomly added plugin, figure out what it does
-zplugin light zdharma/fast-syntax-highlighting
+  # Plugin history-search-multi-word loaded with tracking.
+  # REVIEW: randomly added plugin, figure out what it does
+  zplugin load zdharma/history-search-multi-word
 
-# Plugin history-search-multi-word loaded with tracking.
-# REVIEW: randomly added plugin, figure out what it does
-zplugin load zdharma/history-search-multi-word
-
-# Relic build systems from a bygone era...
-zplugin ice as"program" atclone"./autogen.sh && ./configure" atpull="%atclone" make pick"NOPE"; zplugin load universal-ctags/ctags
+  # Relic build systems from a bygone era...
+  # Disabled due to zplugin's sloppy PATH management.
+  #zplugin ice as"program" atclone"./autogen.sh && ./configure" atpull="%atclone" make pick"NOPE"; zplugin load universal-ctags/ctags
+else
+  echo "zplugin not available, cannot load zsh plugins."
+fi
 
 #export FZF_BASE="$HOME/.zplugin/plugins/junegunn---fzf-bin"
 ################################################################################
