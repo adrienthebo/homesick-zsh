@@ -1,5 +1,5 @@
 
-if command -v docker-machine; then
+if command -v docker-machine 2>&- 1>&-; then
   autoload -Uz add-zsh-hook
 
   preexec_dockermachine() {
