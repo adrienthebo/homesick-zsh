@@ -12,6 +12,10 @@ plugins=(
   rustup
   zsh-completions
   kubectl
+  helm
+  ssh
+  scp
+  rsync
 )
 
 autoload -U compinit && compinit
