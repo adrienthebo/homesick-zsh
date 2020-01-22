@@ -11,7 +11,8 @@ alias be="bundle exec"
 alias br="bundle exec rspec"
 alias bs="bundle exec rspec"
 
-if [ -d "$HOME/.rbenv/bin" ]; then
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  pathmunge "$HOME/.rbenv/bin"
   eval "$($HOME/.rbenv/bin/rbenv init -)"
 elif command -v rbenv 1>&- 2>&-; then
   eval "$(rbenv init -)"
