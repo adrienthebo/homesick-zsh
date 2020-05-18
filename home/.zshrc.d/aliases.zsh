@@ -23,3 +23,7 @@ fi
 if command -v bat 2>&- 1>&-; then
   alias cat=bat
 fi
+
+function cht() {
+  curl https://cht.sh/$1 | less -SR
+}

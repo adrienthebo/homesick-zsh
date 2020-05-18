@@ -10,11 +10,8 @@ plugins=(
   pip
   history
   rustup
-  zsh-completions
   kubectl
   helm
-  ssh
-  scp
   rsync
 )
 

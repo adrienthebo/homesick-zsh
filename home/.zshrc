@@ -61,3 +61,6 @@ setopt AUTO_CD
 setopt NO_CDABLE_VARS
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+
+# added by travis gem
+[ -f /home/adrien/.travis/travis.sh ] && source /home/adrien/.travis/travis.sh
