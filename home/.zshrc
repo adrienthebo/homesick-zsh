@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # .zshrc
 
 # Drag in shell agnostic settings.
@@ -8,32 +15,28 @@
 ################################################################################
 
 # Zplugin installation:
-# `sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"`
+# `sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"`
 
-if [ -f "$HOME/.zplugin/bin/zplugin.zsh" ]; then
-  source "$HOME/.zplugin/bin/zplugin.zsh"
-  autoload -Uz _zplugin
-  (( ${+_comps} )) && _comps[zplugin]=_zplugin
+if [[ -f "$HOME/.zinit/bin/zinit.zsh" ]]; then
+  source "$HOME/.zinit/bin/zinit.zsh"
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
 
-  zplugin ice atclone'./install --xdg --no-update-rc --completion --key-bindings' atpull'%atclone'; zplugin load junegunn/fzf
+  zinit ice atclone'./install --xdg --no-update-rc --completion --key-bindings' atpull'%atclone'; zinit load junegunn/fzf
 
   # REVIEW: randomly added plugin, figure out what it does
-  zplugin light zsh-users/zsh-autosuggestions
+  zinit light zsh-users/zsh-autosuggestions
   # REVIEW: randomly added plugin, figure out what it does
-  zplugin light zdharma/fast-syntax-highlighting
+  zinit light zdharma/fast-syntax-highlighting
 
   # Plugin history-search-multi-word loaded with tracking.
   # REVIEW: randomly added plugin, figure out what it does
-  zplugin load zdharma/history-search-multi-word
-
-  # Relic build systems from a bygone era...
-  # Disabled due to zplugin's sloppy PATH management.
-  #zplugin ice as"program" atclone"./autogen.sh && ./configure" atpull="%atclone" make pick"NOPE"; zplugin load universal-ctags/ctags
+  zinit load zdharma/history-search-multi-word
 else
-  echo "zplugin not available, cannot load zsh plugins."
+  echo "zinit not available, cannot load zsh plugins."
 fi
 
-#export FZF_BASE="$HOME/.zplugin/plugins/junegunn---fzf-bin"
+#export FZF_BASE="$HOME/.zinit/plugins/junegunn---fzf-bin"
 ################################################################################
 # Source all zsh fragments
 ################################################################################
@@ -64,3 +67,7 @@ setopt NO_CDABLE_VARS
 
 # added by travis gem
 [ -f /home/adrien/.travis/travis.sh ] && source /home/adrien/.travis/travis.sh
+### End of Zinit's installer chunk
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
