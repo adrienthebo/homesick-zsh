@@ -27,3 +27,5 @@ fi
 function cht() {
   curl https://cht.sh/$1 | less -SR
 }
+
+alias ":q"="echo \"Hey kid, I'm a terminal! Stop all the vimming!\""
