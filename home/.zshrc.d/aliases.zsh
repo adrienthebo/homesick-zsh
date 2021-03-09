@@ -22,6 +22,11 @@ fi
 
 if command -v bat 2>&- 1>&-; then
   alias cat=bat
+  alias less=bat
+fi
+
+if command -v gsed 2>&- 1>&-; then
+  alias sed=gsed
 fi
 
 function cht() {
@@ -29,3 +34,4 @@ function cht() {
 }
 
 alias ":q"="echo \"Hey kid, I'm a terminal! Stop all the vimming!\""
+alias ":e"=":q"

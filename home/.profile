@@ -4,3 +4,7 @@ else
     export EDITOR=vim
 fi
 export VISUAL="$EDITOR"
+
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
