@@ -1,18 +1,23 @@
 plugins=(
-  docker
+  brew
   cargo
-  rust
+  colored-man-pages
+  docker
+  git
+  helm
+  history
   httpie
+  kitchen
+  kubectl
+  pip
+  python
+  rsync
+  rust
+  rustup
   terraform
   tmux
   zsh-syntax-highlighting
-  kitchen
-  pip
-  history
-  rustup
-  kubectl
-  helm
-  rsync
+  zsh-interactive-cd
 )
 
 autoload -U compinit && compinit
