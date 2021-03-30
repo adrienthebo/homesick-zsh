@@ -25,12 +25,16 @@ if command -v bat 2>&- 1>&-; then
   alias less=bat
 fi
 
+if command -v ytop 2>&- 1>&-; then
+  alias htop=ytop
+fi
+
 if command -v gsed 2>&- 1>&-; then
   alias sed=gsed
 fi
 
 function cht() {
-  curl https://cht.sh/$1 | less -SR
+  curl https://cht.sh/$1 | $PAGER
 }
 
 alias ":q"="echo \"Hey kid, I'm a terminal! Stop all the vimming!\""

@@ -71,4 +71,5 @@ setopt NO_CDABLE_VARS
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-### End of Zinit's installer chunk
+
+[[ -d ~/.asdf ]] && source ~/.asdf/asdf.sh
