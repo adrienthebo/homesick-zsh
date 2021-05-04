@@ -40,9 +40,12 @@ alias ":e"=":q"
 alias "ty"="yw!"
 alias "y"="echo n"
 
-if command -v gsed 2>&- 1>&-; then
+if command -v git 2>&- 1>&-; then
   git() {
     if [[ $(($RANDOM % 64)) -eq 0 ]]; then
+      if ! command -v gti 2>&- 1>&-; then
+        echo "Install gti you fun hating nerd"
+      fi
       gti "$@"
     else
       command git "$@"
