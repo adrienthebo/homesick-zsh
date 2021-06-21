@@ -29,8 +29,8 @@ function cht() {
 
 # Laugh more, nitpick less. Y'all need to have more fun.
 alias ":q"="echo \"Hey kid, I'm a computer! Stop all the downloadin'!\""
-alias ":e"=":q"
-alias "ty"="yw!"
+alias ":e"="echo :q"
+alias "ty"="echo \"yw!\""
 alias "y"="echo n"
 
 if command -v git 2>&- 1>&-; then
