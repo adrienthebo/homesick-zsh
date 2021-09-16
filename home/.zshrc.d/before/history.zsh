@@ -4,7 +4,7 @@
 
 HISTFILE=~/.histfile
 HIST_STAMPS="yyyy-mm-dd"
-HISTSIZE=10000000
-SAVEHIST=1000000
+#HISTSIZE=10000000
+#SAVEHIST=1000000
 
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.

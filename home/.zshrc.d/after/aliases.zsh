@@ -49,7 +49,7 @@ fi
 if command -v task 2>&- 1>&-; then
   task() {
     if [[ $(($RANDOM % 64)) -eq 0 ]]; then
-      echo "Go for a walk you banana shaped fuck."
+      echo "Do a yoga. Or make a walk. Or have a stretch, you banana shaped fuck."
       sleep 60
     fi
     command task "$@"
