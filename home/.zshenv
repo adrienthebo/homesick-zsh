@@ -50,3 +50,4 @@ function sourcedir() {
 if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
     source ~/.zpath
 fi
+source "$HOME/.cargo/env"
