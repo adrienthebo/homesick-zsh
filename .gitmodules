@@ -7,3 +7,6 @@
 [submodule "home/.oh-my-zsh.custom/themes/powerlevel10k"]
 	path = home/.oh-my-zsh.custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "home/.asdf"]
+	path = home/.asdf
+	url = https://github.com/asdf-vm/asdf.git
